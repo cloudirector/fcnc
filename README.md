@@ -1,6 +1,8 @@
 # fcnc
 > This is a project was worked on for a short time some odd years ago. Somehow I found it still up and running on repl.it, It was origionally intended to be used for not legal things (never done as I stopped nerding) so now Its just for my own personal security research
 
+> just a note: holy shit this code is ass
+
 - [ ] Make origional branding but make it better
 - [ ] Translate to a better language
   - [x] Prefered Options
