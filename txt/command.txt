@@ -1,0 +1,23 @@
+*print*goofy ahh
+*print*goofy ahh idk what
+*rce*uname -a
+*dos*https://www.worldsdumbestgame.com/::80::100000
+*print*Hello, World!
+*rce*uname -a
+*rce*test
+*dos*
+*dos*
+*dos*
+*dos*
+*dos*test
+*dos*8.8.8.8
+*dos*8.8.8.8
+*dos*8.8.8.8
+*dos*8.8.8.8
+*dos*0.0.0.0::80::100
+*dos**http*::0.0.0.0::80::100
+*dos**udp*::0.0.0.0::80::100
+*dos**udp*::0.0.0.0::80::100
+*dos**udp*::0.0.0.0::80::100
+*dos**tcp*::0.0.0.0::90::100
+*dos**http*::0.0.0.0::80::100

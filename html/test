@@ -1,0 +1,111 @@
+                x = document.getElementById("title");
+                x.innerHTML = "Succesful";
+                var win = window.open("/panel?password=" + document.getElementById('password-field').value, "_blank");
+                if (win) {
+                  win.focus();
+                }
+                else{ 
+                  alert('Please allow popups for this website');
+                }
+
+  setTimeout(function(){
+    console.log('open')
+    var win = window.open("/login", "_blank");
+    if (win) {
+      win.focus();
+    }
+    else{ 
+      null
+    }
+}, 2000); 
+
+
+<script>
+  setTimeout(function(){
+    var win = window.open("/panel?auth={adminpassencrypted}", "_blank");
+    if (win) {
+      win.focus();
+    }
+    else{ 
+      null
+    }
+}, 2000); 
+</script>
+
+
+.div1 {
+  padding: 25px 25px 25px 25px;
+  width: var(--tabbutton-width);
+  height: var(--tabbutton-height);
+  background-image: var(--div1-content);
+  background-size: cover; 
+  background-repeat: no-repeat;
+  border-radius: 30px;
+  transition: width var(--width-speed), height var(--height-speed) ease-out;
+}
+
+.div1:hover {
+  width: var(--div1-expadedwigth);
+  height: var(--div1-expadedheight);
+  background-image: var(--div1-wallpaper);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+     <script>
+function check()
+{
+    if (window.XMLHttpRequest)
+    {// code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp=new XMLHttpRequest();
+    }
+    else
+    {// code for IE6, IE5
+        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlhttp.onreadystatechange=function()
+    {
+        if (xmlhttp.readyState==4 && xmlhttp.status==200)
+        {
+            console.log(xmlhttp.responseText);
+            if (xmlhttp.responseText == 'bad') {
+              console.log('bad')
+            } else {
+              console.log(xmlhttp.responseText)
+              x = document.getElementById("title"); 
+              x.innerHTML = "Succesful";
+              var win = window.open("/panel?auth=" + xmlhttp.responseText, "_blank");
+              if (win) {
+                win.focus();
+              }
+              else{ 
+                alert('Please allow popups for this website');
+              }
+            }
+        }
+    }
+    xmlhttp.open("GET", '/admin?passwordcheck=' + document.getElementById('password-field').value, false);
+    xmlhttp.send();    
+}
+     </script>
+    <script>
+       (function($) {
+         "use strict";
+         var fullHeight = function() {
+           $('.js-fullheight').css('height', $(window).height());
+           $(window).resize(function() {
+             $('.js-fullheight').css('height', $(window).height());
+           });
+         };
+         fullHeight();
+         $(".toggle-password").click(function() {
+           $(this).toggleClass("fa-eye fa-eye-slash");
+           var input = $($(this).attr("toggle"));
+           if (input.attr("type") == "password") {
+             input.attr("type", "text");
+           } else {
+             input.attr("type", "password");
+           }
+         });
+       })(jQuery);
+     </script>

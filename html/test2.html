@@ -1,0 +1,40 @@
+<style>
+  .menu-button {
+    width: 100px;
+    height: 100px; 
+    background-color: red;
+    transition: width 1s, height 1s, border-radius 1s, background-color 1s ;
+    border-radius: 30px;
+  }
+
+  .menu-button:hover {
+    width: 200px;   
+    height: 200px;
+    background-color: blue;
+    border-radius: 20px;
+    position: relative;
+    animation: mymove 10s infinite;
+}
+
+@keyframes mymove {
+  0% {
+    left: 0px;
+    top: 0px;
+    opacity: 1
+  }
+  50% {
+    left: 0px;
+    top: 200px;
+    opacity: 1
+  }
+  100% {
+    left: 0px;
+    top: 0px;
+    opacity: 1
+  }
+}
+</style>
+
+<center>
+<div class="menu-button"></div>
+</center>

